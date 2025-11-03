@@ -49,8 +49,8 @@ export const AboutSection = () => {
                 </p>
               </Card>
 
-              <Card className="p-8 bg-gradient-to-br from-card to-accent/5 border border-accent/20 hover:shadow-xl transition-all group animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent to-primary-glow flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <Card className="p-8 bg-gradient-to-br from-card to-accent/5 border border-primary/20 hover:shadow-xl transition-all group animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <TrendingUp className="w-7 h-7 text-white" />
                 </div>
                 <h4 className="text-xl font-bold mb-3">Our Commitment</h4>
