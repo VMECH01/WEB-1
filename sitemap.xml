@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://crescendoinnovations.com/</loc>
+    <lastmod>2025-11-03</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://crescendoinnovations.com/about</loc>
+    <lastmod>2025-11-03</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://crescendoinnovations.com/innovation</loc>
+    <lastmod>2025-11-03</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://crescendoinnovations.com/solutions</loc>
+    <lastmod>2025-11-03</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://crescendoinnovations.com/founders</loc>
+    <lastmod>2025-11-03</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://crescendoinnovations.com/contact</loc>
+    <lastmod>2025-11-03</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
