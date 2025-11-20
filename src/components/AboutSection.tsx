@@ -18,14 +18,14 @@ export const AboutSection = () => {
           {/* Main Content */}
           <div className="space-y-12">
             {/* Vision Statement */}
-            <div className="text-center max-w-4xl mx-auto space-y-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+            <div className="text-center max-w-4xl mx-auto space-y-6 animate-fade-in-up anim-delay-01">
               <p className="text-xl md:text-2xl leading-relaxed text-foreground">
                 At Crescendo Innovations, we believe the future of energy must be <span className="font-semibold text-primary">bold, sustainable, and transformative</span>. With pioneering research in hydrogen and lithium energy technologies, we are reimagining how the world powers itself — cleanly, efficiently, and responsibly.
               </p>
             </div>
 
             {/* Founder Story */}
-            <Card className="p-8 md:p-12 border-2 border-border/50 hover:border-primary/30 transition-all shadow-xl hover:shadow-2xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <Card className="p-8 md:p-12 border-2 border-border/50 hover:border-primary/30 transition-all shadow-xl hover:shadow-2xl animate-fade-in-up anim-delay-02">
               <div className="flex items-start gap-4 mb-6">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center flex-shrink-0">
                   <Sparkles className="w-6 h-6 text-primary" />
@@ -39,7 +39,7 @@ export const AboutSection = () => {
 
             {/* Mission Cards */}
             <div className="grid md:grid-cols-2 gap-6">
-              <Card className="p-8 bg-gradient-to-br from-card to-primary/5 border border-primary/20 hover:shadow-xl transition-all group animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+              <Card className="p-8 bg-gradient-to-br from-card to-primary/5 border border-primary/20 hover:shadow-xl transition-all group animate-fade-in-up anim-delay-03">
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Target className="w-7 h-7 text-white" />
                 </div>
@@ -49,7 +49,7 @@ export const AboutSection = () => {
                 </p>
               </Card>
 
-              <Card className="p-8 bg-gradient-to-br from-card to-accent/5 border border-primary/20 hover:shadow-xl transition-all group animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+              <Card className="p-8 bg-gradient-to-br from-card to-accent/5 border border-primary/20 hover:shadow-xl transition-all group animate-fade-in-up anim-delay-04">
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <TrendingUp className="w-7 h-7 text-white" />
                 </div>

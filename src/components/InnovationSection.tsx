@@ -45,14 +45,13 @@ export const InnovationSection = () => {
         </div>
 
         {/* Technology Cards */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 mb-16 stagger-15">
           {technologies.map((tech, index) => {
             const Icon = tech.icon;
             return (
               <Card
                 key={tech.title}
                 className="p-8 md:p-10 border-2 border-border/50 hover:border-primary/30 transition-all hover:shadow-2xl group animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.15}s` }}
               >
                 <div className="flex items-start gap-6 mb-6">
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -86,7 +85,7 @@ export const InnovationSection = () => {
         </div>
 
         {/* Strategic Vision */}
-        <Card className="p-8 md:p-12 bg-gradient-to-br from-card to-primary/5 border-2 border-primary/20 mb-12 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+  <Card className="p-8 md:p-12 bg-gradient-to-br from-card to-primary/5 border-2 border-primary/20 mb-12 animate-fade-in-up anim-delay-03">
           <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center">Our Strategic Approach</h3>
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
             By pioneering innovations at the intersection of hydrogen and lithium technologies, Crescendo Innovations addresses critical challenges in <span className="font-semibold text-foreground">energy storage capacity, system flexibility, and cost-efficiency</span>. This dual-technology approach allows us to serve diverse market needs while offering investors and policymakers scalable, future-ready solutions that align with global clean energy targets.
@@ -97,7 +96,7 @@ export const InnovationSection = () => {
         </Card>
 
         {/* Capabilities Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-6 animate-fade-in anim-delay-04">
           {capabilities.map((capability, index) => {
             const Icon = capability.icon;
             return (

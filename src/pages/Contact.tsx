@@ -5,9 +5,8 @@ import { Send, Loader2, CheckCircle2, XCircle } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
+import MuiButton from "@/components/mui/MuiButton";
+import Isometric from "@/assets/iso3.svg";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -48,10 +47,8 @@ export const Contact = () => {
   };
 
   return (
-    <>
-    <Header />
     <section id="contact" className="py-24 px-4 bg-gradient-to-b from-muted/10 to-background">
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12 space-y-4 animate-fade-in">
           <h2 className="text-4xl md:text-6xl font-bold">
             Get In
@@ -63,86 +60,94 @@ export const Contact = () => {
           <div className="h-1 w-24 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
         </div>
 
-        <Card className="p-8 md:p-12 border-2 border-border/50 shadow-md animate-fade-in-up mb-10">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+
+          <Card className="p-6 md:p-10 border-2 border-border/50 shadow-md animate-fade-in-up">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-muted-foreground mb-1">
+                    Your Name
+                  </label>
+                  <Input
+                    id="name"
+                    name="name"
+                    type="text"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Jane Doe"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-muted-foreground mb-1">
+                    Email Address
+                  </label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="you@example.com"
+                    required
+                  />
+                </div>
+              </div>
+
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-muted-foreground mb-1">
-                  Your Name
+                <label htmlFor="message" className="block text-sm font-medium text-muted-foreground mb-1">
+                  Message
                 </label>
-                <Input
-                  id="name"
-                  name="name"
-                  type="text"
-                  value={formData.name}
+                <Textarea
+                  id="message"
+                  name="message"
+                  rows={5}
+                  value={formData.message}
                   onChange={handleChange}
-                  placeholder="Jane Doe"
+                  placeholder="Tell us about your project or inquiry..."
                   required
                 />
               </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-muted-foreground mb-1">
-                  Email Address
-                </label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="you@example.com"
-                  required
-                />
-              </div>
-            </div>
 
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-muted-foreground mb-1">
-                Message
-              </label>
-              <Textarea
-                id="message"
-                name="message"
-                rows={5}
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Tell us about your project or inquiry..."
-                required
-              />
-            </div>
+              <div className="flex justify-between items-center">
+                <MuiButton type="submit" disabled={status === "sending"} variant="hero">
+                  {status === "sending" ? (
+                    <>
+                      <Loader2 className="animate-spin mr-2" /> Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="mr-2" /> Send Message
+                    </>
+                  )}
+                </MuiButton>
 
-            <div className="flex justify-between items-center">
-              <Button type="submit" disabled={status === "sending"}>
-                {status === "sending" ? (
-                  <>
-                    <Loader2 className="animate-spin mr-2" /> Sending...
-                  </>
-                ) : (
-                  <>
-                    <Send className="mr-2" /> Send Message
-                  </>
+                {status === "sent" && (
+                  <div className="flex items-center text-green-600 text-sm gap-1">
+                    <CheckCircle2 className="w-4 h-4" />
+                    Message sent successfully!
+                  </div>
                 )}
-              </Button>
 
-              {status === "sent" && (
-                <div className="flex items-center text-green-600 text-sm gap-1">
-                  <CheckCircle2 className="w-4 h-4" />
-                  Message sent successfully!
-                </div>
-              )}
-
-              {status === "error" && (
-                <div className="flex items-center text-red-500 text-sm gap-1">
-                  <XCircle className="w-4 h-4" />
-                  Please fill out all fields.
-                </div>
-              )}
+                {status === "error" && (
+                  <div className="flex items-center text-red-500 text-sm gap-1">
+                    <XCircle className="w-4 h-4" />
+                    Please fill out all fields.
+                  </div>
+                )}
+              </div>
+            </form>
+          </Card>
+          <div className="flex justify-center md:justify-end">
+            <div className="max-w-md w-full p-6 flex items-center justify-center">
+              <img src={Isometric} alt="Isometric illustration" className="w-full h-auto iso-float" />
             </div>
-          </form>
-        </Card>
+          </div>
+
+        </div>
       </div>
     </section>
-  </>
   );
 };
 

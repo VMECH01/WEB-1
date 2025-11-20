@@ -1,7 +1,10 @@
-import { Button } from "@/components/ui/button";
+import ButtonVariants from "@/components/ButtonVariants";
 import { Mail, MessageSquare, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const CTASection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="py-24 px-4 relative overflow-hidden">
       {/* Background Effects */}
@@ -19,24 +22,33 @@ export const CTASection = () => {
               </span>
             </h2>
 
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in-up anim-delay-01">
               Partner with Crescendo Innovations to accelerate the global transition to clean, sustainable energy. Let's create a legacy of progress together.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              <Button variant="hero" size="lg" className="group">
-                <Mail className="w-5 h-5" />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 animate-fade-in-up anim-delay-02">
+              <ButtonVariants
+                variant="hero"
+                size="lg"
+                icon={Mail}
+                iconPosition="left"
+                onClick={() => navigate("/contact")}
+              >
                 Contact Our Team
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button variant="glassy" size="lg">
-                <MessageSquare className="w-5 h-5" />
+               
+              </ButtonVariants>
+              <ButtonVariants
+                variant="glassy"
+                size="lg"
+                icon={MessageSquare}
+                onClick={() => navigate("/contact#consultation")}
+              >
                 Schedule Consultation
-              </Button>
+              </ButtonVariants>
             </div>
 
             {/* Trust Indicators */}
-            <div className="pt-8 grid sm:grid-cols-3 gap-6 text-sm animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <div className="pt-8 grid sm:grid-cols-3 gap-6 text-sm animate-fade-in anim-delay-03">
               <div className="flex flex-col items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-primary" />
                 <span className="text-muted-foreground">Innovation-Driven</span>

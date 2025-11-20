@@ -49,12 +49,11 @@ export const SolutionsSection = () => {
           </div>
 
           {/* Problems & Solutions Grid */}
-          <div className="grid md:grid-cols-2 gap-6 mb-16">
+          <div className="grid md:grid-cols-2 gap-6 mb-16 stagger-10">
             {problems.map((item, index) => (
               <Card
                 key={item.challenge}
                 className="p-8 border-2 border-border/50 hover:border-primary/30 transition-all hover:shadow-xl group animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-12 h-12 rounded-xl bg-destructive/10 flex items-center justify-center flex-shrink-0">
@@ -76,7 +75,7 @@ export const SolutionsSection = () => {
           </div>
 
           {/* Impact Statement */}
-          <Card className="p-8 md:p-12 bg-gradient-to-br from-primary/5 via-card to-accent/5 border-2 border-primary/20 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <Card className="p-8 md:p-12 bg-gradient-to-br from-primary/5 via-card to-accent/5 border-2 border-primary/20 animate-fade-in-up anim-delay-04">
             <div className="flex items-start gap-6 mb-6">
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0">
                 <TrendingUp className="w-8 h-8 text-white" />

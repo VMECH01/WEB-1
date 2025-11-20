@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
-import Contact from "@/pages/Contact";
-import { Links , useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,6 +23,7 @@ export const Header = () => {
     { label: "Solutions", href: "/#solutions" },
     { label: "Founders", href: "/#team" },
     // { label : "Contact" , href: "/#contact"},
+    // {label: "Product" , href: "/ProductHyCooker"},
   ];
 
   return (
@@ -37,7 +37,7 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-3 group">
             <img
               src={logo}
               alt="Crescendo Innovations"
@@ -51,7 +51,7 @@ export const Header = () => {
                 INNOVATIONS
               </div>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">

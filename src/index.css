@@ -97,3 +97,70 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* Utility animation delay classes to avoid inline styles */
+@layer utilities {
+  .anim-delay-01 { animation-delay: 0.1s; }
+  .anim-delay-02 { animation-delay: 0.2s; }
+  .anim-delay-03 { animation-delay: 0.3s; }
+  .anim-delay-04 { animation-delay: 0.4s; }
+  .anim-delay-06 { animation-delay: 0.6s; }
+  .anim-delay-10 { animation-delay: 1s; }
+  .anim-delay-15 { animation-delay: 1.5s; }
+  .anim-delay-20 { animation-delay: 2s; }
+}
+
+/* Isometric float animation used across pages */
+@keyframes iso-float {
+  0% { transform: translateY(0) rotate(-0.5deg); }
+  50% { transform: translateY(-8px) rotate(0.5deg); }
+  100% { transform: translateY(0) rotate(-0.5deg); }
+}
+
+@layer utilities {
+  .iso-float {
+    animation: iso-float 6s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  /* Slight shadow/scale on hover for interactivity */
+  .iso-float:hover {
+    transform: translateY(-6px) scale(1.01);
+    transition: transform 200ms ease;
+  }
+}
+
+  /* Respect user's reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .iso-float {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+
+/* Hero background uses the local asset (processed by Vite) */
+.hero-bg {
+  background-image: url('./assets/hero.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Stagger utilities for nth-child animation delays (increments of 0.15s and 0.1s) */
+@layer utilities {
+  .stagger-15 > *:nth-child(1) { animation-delay: 0s; }
+  .stagger-15 > *:nth-child(2) { animation-delay: 0.15s; }
+  .stagger-15 > *:nth-child(3) { animation-delay: 0.3s; }
+  .stagger-15 > *:nth-child(4) { animation-delay: 0.45s; }
+  .stagger-15 > *:nth-child(5) { animation-delay: 0.6s; }
+  .stagger-15 > *:nth-child(6) { animation-delay: 0.75s; }
+
+  .stagger-10 > *:nth-child(1) { animation-delay: 0s; }
+  .stagger-10 > *:nth-child(2) { animation-delay: 0.1s; }
+  .stagger-10 > *:nth-child(3) { animation-delay: 0.2s; }
+  .stagger-10 > *:nth-child(4) { animation-delay: 0.3s; }
+  .stagger-10 > *:nth-child(5) { animation-delay: 0.4s; }
+  .stagger-10 > *:nth-child(6) { animation-delay: 0.5s; }
+}
+
+/* Prevent mobile text-size adjustments across browsers */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
